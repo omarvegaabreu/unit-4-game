@@ -5,19 +5,21 @@ var lost = 0;
 var win = 0;
 var previous = 0;
 
-$("#result").html("Random Result: " + random_results);
-//Loop creates four crystals displayed as buttons on the page
-for (var i = 0; i < 4; i++) {
-  //Each crystal should have a random hidden value between 1 - 12.
-  var random = Math.floor(Math.random() * 12) + 1;
+var startGame = function() {
+  $("#result").html("Random Result: " + random_results);
+  //Loop creates four crystals displayed as buttons on the page
+  for (var i = 0; i < 4; i++) {
+    //Each crystal should have a random hidden value between 1 - 12.
+    var random = Math.floor(Math.random() * 12) + 1;
 
-  var crystal = $("<div>");
-  crystal.attr({
-    class: "crystal",
-    "data-random": random
-  });
-  $(".crystals").append(crystal);
-}
+    var crystal = $("<div>");
+    crystal.attr({
+      class: "crystal",
+      "data-random": random
+    });
+    $(".crystals").append(crystal);
+  }
+};
 
 $(".crystal").on("click", function() {
   var num = parseInt($(this).attr("data-random"));
@@ -27,9 +29,12 @@ $(".crystal").on("click", function() {
   console.log(previous);
 
   if (previous > random_results) {
-    console.log("You lost!!");
+    lost--;
+    $("#lost").html(win);
   } else if (previous === random_results) {
-    console.log("You win!! ");
+    win++;
+
+    $("#win").html(win);
   }
 });
 
