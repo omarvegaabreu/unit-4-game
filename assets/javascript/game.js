@@ -11,14 +11,14 @@ var resetAndStartGame = function() {
 
   random_result = Math.floor(Math.random() * (120 - 19) + 19);
   $("#result").html("Random Result: " + random_result);
-  //Loop creates four crystals displayed as buttons on the page
+  //Loop creates four crystals displayed as buttons on the page.
   for (var i = 0; i < 4; i++) {
     //Each crystal should have a random hidden value between 1 - 12.
     var random = Math.floor(Math.random() * 12) + 1;
-    //variable to add div to the crystals loop
+    //variable to add div to the crystals loop.
     var crystal = $("<div>");
 
-    //This object adds attributes in the html taking the random variable
+    //This object adds attributes in the html taking the random variable.
     crystal.attr({
       class: "crystal",
       "data-random": random
@@ -32,7 +32,7 @@ var resetAndStartGame = function() {
   }
 };
 
-//function call which restarts game
+//function call which restarts game.
 resetAndStartGame();
 
 //When the player clicks on a crystal,
