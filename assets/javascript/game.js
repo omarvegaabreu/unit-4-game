@@ -1,16 +1,16 @@
 //The player will be shown a random number at the start of the game. This number should be
 // between 19 - 120. random_results variable will have the values.
 var random_results = Math.floor(Math.random() * (120 - 19) + 19);
-
 var lost;
 var win;
+var previous = 0;
 
 $("#result").html("Random Result: " + random_results);
 //Loop creates four crystals displayed as buttons on the page
 for (var i = 0; i < 4; i++) {
   //Each crystal should have a random hidden value between 1 - 12.
   var random = Math.floor(Math.random() * 12) + 1;
-  console.log(random);
+
   var crystal = $("<div>");
   crystal.attr({
     class: "crystal",
@@ -19,7 +19,13 @@ for (var i = 0; i < 4; i++) {
   $(".crystals").append(crystal);
 }
 
-//Each crystal should have a random hidden value between 1 - 12.
+$(".crystal").on("click", function() {
+  var num = parseInt($(this).attr("data-random"));
+
+  previous += num;
+
+  console.log(previous);
+});
 
 //When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
 
