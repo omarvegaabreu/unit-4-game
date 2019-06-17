@@ -5,7 +5,7 @@ var lost = 0;
 var win = 0;
 var previous = 0;
 
-var startGame = function() {
+var resetAndStartGame = function() {
   $("#result").html("Random Result: " + random_results);
   //Loop creates four crystals displayed as buttons on the page
   for (var i = 0; i < 4; i++) {
@@ -21,6 +21,8 @@ var startGame = function() {
   }
 };
 
+resetAndStartGame();
+
 $(".crystal").on("click", function() {
   var num = parseInt($(this).attr("data-random"));
 
@@ -33,6 +35,8 @@ $(".crystal").on("click", function() {
     $("#lost").html(win);
   } else if (previous === random_results) {
     win++;
+
+    resetAndStartGame();
 
     $("#win").html(win);
   }
