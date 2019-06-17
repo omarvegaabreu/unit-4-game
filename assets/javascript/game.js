@@ -25,6 +25,12 @@ $(".crystal").on("click", function() {
   previous += num;
 
   console.log(previous);
+
+  if (previous > random_results) {
+    console.log("You lost!!");
+  } else if (previous === random_results) {
+    console.log("You win!! ");
+  }
 });
 
 //When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
