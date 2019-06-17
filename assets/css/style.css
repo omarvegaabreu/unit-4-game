@@ -1,3 +1,12 @@
+body {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 10.2em;
+  background: url(../images/papyrus.png);
+  color: #d8640c;
+  background-repeat: repeat;
+}
+
 .crystals {
   display: flex;
   justify-content: space-around;
@@ -8,4 +17,7 @@
   border: 1px solid green;
   height: 200px;
   width: 200px;
+}
+.background {
+  background-color: rgba(50, 115, 220, 0.3);
 }

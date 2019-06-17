@@ -9,6 +9,12 @@ var previous = 0;
 var resetAndStartGame = function() {
   $(".crystals").empty(); //Will hide this amount until the player clicks a crystal.
 
+  var images = [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnIf50aKBfIAEOTiN6USnYlI5Sa1Dwp4kgPsDEy9ZZEXsPuUeKBw",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnIf50aKBfIAEOTiN6USnYlI5Sa1Dwp4kgPsDEy9ZZEXsPuUeKBw",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnIf50aKBfIAEOTiN6USnYlI5Sa1Dwp4kgPsDEy9ZZEXsPuUeKBw",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnIf50aKBfIAEOTiN6USnYlI5Sa1Dwp4kgPsDEy9ZZEXsPuUeKBw"
+  ];
   random_result = Math.floor(Math.random() * (120 - 19) + 19);
   $("#result").html("Random Result: " + random_result);
   //Loop creates four crystals displayed as buttons on the page.
@@ -23,13 +29,18 @@ var resetAndStartGame = function() {
       class: "crystal",
       "data-random": random
     });
+    crystal.css({
+      "background-image": "url(" + images[i] + ") "
+    });
 
-    //This method assignees a random number to the image in the html.
-    crystal.html(random);
+    //This method assignees a random number to the in the html to view results from random variable.
+    // crystal.html(random);
 
     //jquery functions to append the crystal variable which contains the <divs> to the html.
     $(".crystals").append(crystal);
   }
+
+  $("#previous").html("Total Score: " + previous);
 };
 
 //function call which restarts game.
@@ -43,20 +54,26 @@ $(document).on("click", ".crystal", function() {
 
   previous += num;
 
+  $("#previous").html("Total Score: " + previous);
+
   console.log(previous);
 
   if (previous > random_result) {
-    lost--;
+    lost++;
 
-    $("#lost").html(lost);
+    $("#lost").html("You lost " + lost);
     //The player loses if their score goes above the random number.
     previous = 0;
+
+    // $("#previous").html(previous);
 
     resetAndStartGame(); //The game restarts whenever the player wins or loses.
   } else if (previous === random_result) {
     win++;
 
-    $("#win").html(win);
+    $("#win").html("You win!! " + win);
+
+    //$("#previous").html(previous);
 
     previous = 0;
 
