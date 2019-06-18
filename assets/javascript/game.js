@@ -16,7 +16,7 @@ var resetAndStartGame = function() {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnIf50aKBfIAEOTiN6USnYlI5Sa1Dwp4kgPsDEy9ZZEXsPuUeKBw"
   ];
   random_result = Math.floor(Math.random() * (120 - 19) + 19);
-  $("#result").html("Random Result: " + random_result);
+  $("#result").html("Match the number: " + random_result);
   //Loop creates four crystals displayed as buttons on the page.
   for (var i = 0; i < 4; i++) {
     //Each crystal should have a random hidden value between 1 - 12.
@@ -34,7 +34,7 @@ var resetAndStartGame = function() {
     });
 
     //This method assignees a random number to the in the html to view results from random variable.
-    // crystal.html(random);
+    crystal.html(random);
 
     //jquery functions to append the crystal variable which contains the <divs> to the html.
     $(".crystals").append(crystal);
@@ -61,7 +61,7 @@ $(document).on("click", ".crystal", function() {
   if (previous > random_result) {
     lost++;
 
-    $("#lost").html("You lost " + lost);
+    $("#lost").html("You have lost: " + lost + " times.");
     //The player loses if their score goes above the random number.
     previous = 0;
 
@@ -71,7 +71,7 @@ $(document).on("click", ".crystal", function() {
   } else if (previous === random_result) {
     win++;
 
-    $("#win").html("You win!! " + win);
+    $("#win").html("You've won: " + win + " times.");
 
     //$("#previous").html(previous);
 
