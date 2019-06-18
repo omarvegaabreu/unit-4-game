@@ -34,7 +34,7 @@ var resetAndStartGame = function() {
     });
 
     //This method assignees a random number to the in the html to view results from random variable.
-    crystal.html(random);
+    //crystal.html(random);
 
     //jquery functions to append the crystal variable which contains the <divs> to the html.
     $(".crystals").append(crystal);
