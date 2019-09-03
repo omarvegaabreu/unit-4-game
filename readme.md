@@ -2,6 +2,8 @@
 
 URL: https://omarvegaabreu.github.io/unit-4-game/
 
+![](assets/images/crystalCollectorHome.jpg)
+
 ### Overview
 
 This is an interactive game for web browsers. The app dynamically updates the HTML pages with the jQuery library.
