@@ -1,16 +1,10 @@
-# jQuery web application
+# Crystal Collector
+
+URL: https://omarvegaabreu.github.io/unit-4-game/
 
 ### Overview
 
-This assignment, was to create another interactive game for web browsers. The app dynamically updates the HTML pages with the jQuery library.
-
-.
-
-- Inside the `assets` directory, there are three additional folders: `javascript`, `css` and `images`.
-  - In the `javascript` folder, the file called `game.js` contains the game logic in jquery.
-  - In the `css` folder, the file called `style.css` constains the sheet used to style the `HTML` file'.
-
-#CrystalsCollector Game
+This is an interactive game for web browsers. The app dynamically updates the HTML pages with the jQuery library.
 
 - Here's how the app works:
 
@@ -29,6 +23,12 @@ This assignment, was to create another interactive game for web browsers. The ap
 
 - The game restarts whenever the player wins or loses.
 
-  - When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
+  - When the game begins again, the player will see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
 
-- The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
+- The app will show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
+
+### Technologies used:
+
+-HMLT
+-CSS
+-JQUERY
